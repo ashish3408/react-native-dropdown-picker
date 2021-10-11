@@ -147,7 +147,8 @@ function Picker({
     rtl = false,
     dropDownDirection = DROPDOWN_DIRECTION.DEFAULT,
     disableLocalSearch = false,
-    theme = THEMES.DEFAULT
+    theme = THEMES.DEFAULT,
+    LeftIconComponent = null,
 }) {
     const [necessaryItems, setNecessaryItems] = useState([]);
     const [searchText, setSearchText] = useState('');
@@ -780,7 +781,8 @@ function Picker({
      */
     const SimpleBodyComponent = useMemo(() => (
         <>
-            {SelectedItemIconComponent}
+            {/* {SelectedItemIconComponent} */}
+            {LeftIconComponent()}
             <Text style={_labelStyle} {...labelProps}>
                 {_selectedItemLabel}
             </Text>
