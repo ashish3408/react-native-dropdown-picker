@@ -192,6 +192,7 @@ declare module "react-native-dropdown-picker" {
       ArrowUpIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
       ArrowDownIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
       TickIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
+      UnTickIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
       CloseIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
       LeftIconComponent?: (props: {style: StyleProp<ViewStyle>}) => JSX.Element;
       ListEmptyComponent?: (props: ListEmptyComponentPropsInterface) => JSX.Element;
