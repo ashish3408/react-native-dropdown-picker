@@ -117,6 +117,7 @@ function Picker({
     ArrowUpIconComponent = null,
     ArrowDownIconComponent = null,
     TickIconComponent = null,
+    UnTickIconComponent = null,
     CloseIconComponent = null,
     ListEmptyComponent = null,
     ActivityIndicatorComponent = null,
@@ -962,6 +963,7 @@ function Picker({
      * @returns {JSX.Element}
      */
      const BadgeBodyComponent = useMemo(() => (
+         <View style={{flex:1,flexDirection:'row', alignItems:'center'}}>{LeftIconComponent()}
         <FlatList
             ref={setBadgeFlatListRef}
             data={selectedItems}
@@ -975,6 +977,7 @@ function Picker({
             contentContainerStyle={THEME.listBodyContainer}
             inverted={rtl}
         />
+        </View>
     ), [
         rtl,
         selectedItems,
@@ -1270,6 +1273,7 @@ function Picker({
                 isSelected={isSelected}
                 IconComponent={IconComponent}
                 TickIconComponent={_TickIconComponent}
+                UnTickIconComponent={UnTickIconComponent}
                 listItemContainerStyle={_listItemContainerStyle}
                 listItemLabelStyle={_listItemLabelStyle}
                 listChildContainerStyle={listChildContainerStyle}
