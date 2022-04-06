@@ -6,7 +6,9 @@ import React, {
 
 import {
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    View
+
 } from 'react-native';
 
 import { LIST_MODE } from '../constants';
@@ -23,6 +25,7 @@ function RenderListItem({
     isSelected,
     IconComponent,
     TickIconComponent,
+    UnTickIconComponent,
     listItemContainerStyle,
     listItemLabelStyle,
     listChildContainerStyle,
@@ -43,9 +46,12 @@ function RenderListItem({
      * The tick icon component.
      * @returns {JSX|null}
      */
-    const _TickIconComponent = useMemo(() => isSelected && (
-        <TickIconComponent />
-    ), [isSelected, TickIconComponent]);
+    const _TickIconComponent = useMemo(() => {
+        if(isSelected) {
+            return <TickIconComponent />
+        }
+        return UnTickIconComponent && <UnTickIconComponent />
+    }, [isSelected, TickIconComponent]);
 
     /**
      * The list category container style.
@@ -151,10 +157,11 @@ function RenderListItem({
     return (
         <TouchableOpacity style={_listItemContainerStyle} onPress={__onPress} disabled={selectable === false || disabled}>
             {IconComponent}
+            {_TickIconComponent}
             <Text style={_listItemLabelStyle}>
                 {label}
             </Text>
-            {_TickIconComponent}
+            
         </TouchableOpacity>
     );
 }
