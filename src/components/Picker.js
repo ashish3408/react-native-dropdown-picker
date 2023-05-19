@@ -17,12 +17,13 @@ import {
     FlatList,
     TextInput,
     Dimensions,
-    ScrollView,
     Modal,
     ActivityIndicator,
     Platform,
     StyleSheet
 } from 'react-native';
+
+import {ScrollView} from 'react-native-gesture-handler';
 
 const { height: WINDOW_HEIGHT } = Dimensions.get('window');
 
