@@ -40,7 +40,8 @@ function RenderListItem({
     disabledItemLabelStyle,
     categorySelectable,
     onPress,
-    THEME
+    THEME,
+    labelProps
 }) {
     /**
      * The tick icon component.
@@ -158,7 +159,7 @@ function RenderListItem({
         <TouchableOpacity style={_listItemContainerStyle} onPress={__onPress} disabled={selectable === false || disabled}>
             {IconComponent}
             {_TickIconComponent}
-            <Text style={_listItemLabelStyle}>
+            <Text style={_listItemLabelStyle} {...labelProps}>
                 {label}
             </Text>
             
