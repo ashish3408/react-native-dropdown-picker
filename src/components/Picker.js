@@ -1291,6 +1291,7 @@ function Picker({
                 onPress={onPressItem}
                 theme={theme}
                 THEME={THEME}
+                labelProps={labelProps}
             />
         );
     }, [
@@ -1317,7 +1318,8 @@ function Picker({
         categorySelectable,
         onPressItem,
         theme,
-        THEME
+        THEME,
+        labelProps
     ]);
 
     /**
